@@ -12,15 +12,14 @@
     <script src='https://app.glueup.com/compiled/js/eb-widgets.min.js' type='text/javascript'></script>
 
     <style>
-        /* --- Modern Variables & Reset --- */
         :root {
-            --primary: #004b87; /* Dark blue from logo */
-            --secondary: #f15a24; /* Orange from logo */
+            --primary: #004b87; 
+            --secondary: #f15a24;
             --text-main: #1f2937;
             --text-muted: #6b7280;
-            --bg-color: #fcfaf2; /* Light cream bg from banner */
+            --bg-color: #f8fafc; 
             --card-bg: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,10 +31,9 @@
             line-height: 1.6;
         }
 
-        /* --- Navigation --- */
         header {
             background-color: var(--card-bg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -45,92 +43,68 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0.75rem 2rem;
-            display: flex;
-            align-items: center;
         }
 
         .logo img {
-            height: 60px;
+            height: 50px;
             width: auto;
+            display: block;
         }
 
-        /* --- Hero Section with Banner --- */
         .hero {
             width: 100%;
-            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            background: white;
         }
 
         .hero-banner {
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
+            height: auto;
             display: block;
         }
 
-        /* --- Main Layout --- */
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 2rem auto 4rem;
             padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
         }
 
-        /* --- Cards --- */
         .card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2.5rem;
             box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border: 1px solid #f1f5f9;
         }
 
         .info-section h2 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.75rem;
-            font-weight: 700;
         }
-
-        .info-section p {
-            margin-bottom: 1rem;
-        }
-
-        .info-section ul {
-            padding-left: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .info-section li { margin-bottom: 0.75rem; }
 
         .highlight { color: var(--secondary); font-weight: 600; }
 
-        /* --- Widget Section --- */
         .store-header {
             text-align: center;
             margin-bottom: 2rem;
         }
-
-        .store-header h2 {
-            color: var(--primary);
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
         
+        /* The Widget Container */
         .eb-widget {
             width: 100%;
-            min-height: 600px;
-            border-radius: 8px;
+            min-height: 900px; /* High enough to prevent double scrollbars */
+            border: 0;
         }
 
-        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
             color: var(--text-muted);
-            font-size: 0.875rem;
-            border-top: 1px solid #e5e7eb;
-            background: white;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -139,49 +113,41 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="Website-Header-2025-NEW-LTA-LOGO-horizontal_2.webp
-" alt="Louisiana Travel Association Logo">
+                <img src="Images/Logo.png" alt="LTA Logo">
             </a>
         </div>
     </header>
 
     <div class="hero">
-        <img src="Designer (3).png" alt="Free Brochures for Members Banner" class="hero-banner">
+        <img src="Designer%20(3).png" alt="LTA Banner" class="hero-banner">
     </div>
 
     <div class="container">
-        
         <div class="card info-section">
-            <h2>How It Works</h2>
-            <p>As a valued member of the <span class="highlight">Louisiana Travel Association</span>, you have access to unlimited <strong>free</strong> brochures every month to support your marketing and visitor services.</p>
-            <ul>
-                <li><strong>1. Log in to your account:</strong> Access is reserved exclusively for current LTA members.</li>
-                <li><strong>2. Select your quantities:</strong> There is no charge—simply choose the brochures you need for the month.</li>
-                <li><strong>3. Submit your order:</strong> Our team will process and ship the materials directly to your organization.</li>
+            <h2>Order Your Monthly Brochures</h2>
+            <p>As a valued member of the <span class="highlight">Louisiana Travel Association</span>, you can request unlimited brochures every month at no cost.</p>
+            <ul style="padding-left: 1.5rem; margin-top: 1.2rem; color: var(--text-muted);">
+                <li style="margin-bottom: 0.5rem;"><strong>Step 1:</strong> Log in to your LTA member account below.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Step 2:</strong> Select the brochures and quantities needed.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Step 3:</strong> Complete your order for direct shipping.</li>
             </ul>
-            <p style="margin-top: 1rem;">You may place a new order every month as part of your membership benefits!</p>
         </div>
 
-        <div class="card" id="store">
+        <div class="card">
             <div class="store-header">
-                <h2>Place Your Order</h2>
-                <p style="color: var(--text-muted);">Select your brochures below</p>
+                <h2>Member Registration Store</h2>
             </div>
 
             <iframe 
                 class="eb-widget" 
                 id="eb-widget-event-registration" 
-                name="eb-widget-event-registration" 
-                data-auto-adjust-height="true" 
-                data-auto-adjust-width="true" 
-                style="display:block; margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background:transparent;" 
                 src="https://glueupna.glueup.com/organization/4582/widget/event-registration/?eventID=88723">
             </iframe>
-            </div>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Louisiana Travel Association. All rights reserved.</p>
+        <p>&copy; 2026 Louisiana Travel Association. All rights reserved.</p>
     </footer>
 
 </body>
