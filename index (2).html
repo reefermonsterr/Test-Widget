@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Buy Tickets / Sponsorships – Your Organization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Securely purchase tickets, sponsorships, and add‑ons for our event via GlueUp." />
+  <style>
+    :root { --brand:#0b2a4a; --accent:#0f62fe; --bg:#f7f9fc; --text:#1a1a1a; }
+    html, body { margin:0; padding:0; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; color:var(--text); background:var(--bg); line-height:1.5; }
+    .wrap { max-width:1100px; margin:0 auto; padding:24px; }
+    header { text-align:center; padding:24px 0 8px; }
+    header h1 { margin:0 0 8px; font-size:clamp(24px,5vw,40px); color:var(--brand); }
+    header p { margin:0 auto; max-width:720px; color:#444; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.08); padding:16px; margin-top:24px; }
+    .grid { display:grid; grid-template-columns:1.05fr 1fr; gap:24px; }
+    @media (max-width:920px){ .grid { grid-template-columns:1fr; } }
+    .widget-shell { min-height:700px; display:block; }
+    iframe.eb-widget { width:1px; min-width:100%; height:100%; border:0; background:transparent; }
+    .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:12px 18px; border-radius:8px; margin-top:12px; font-weight:600; }
+    .trusted { font-size:14px; color:#666; margin-top:12px; }
+    footer { text-align:center; color:#666; padding:40px 0 20px; font-size:14px; }
+    ul.bullets { margin:0; padding-left:18px; }
+    .faq dt { font-weight:700; margin-top:16px; color:var(--brand); }
+    .faq dd { margin:0 0 12px 0; }
+  </style>
+  <script src="https://app.glueup.com/compiled/js/eb-widgets.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Join the Movement for Conservation in Virginia</h1>
+      <p>Choose tickets, sponsorships, and add‑ons below. Checkout is handled securely via GlueUp.</p>
+      <a class="cta" href="#register">Jump to Registration</a>
+      <div class="trusted">Secure payment • Digital receipts • Discount codes supported</div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>What’s included</h2>
+        <ul class="bullets">
+          <li>Ticket options from General Admission to Premier Sponsorships</li>
+          <li>Optional add‑ons during checkout</li>
+          <li>Instant confirmation email & receipts</li>
+        </ul>
+        <h3>Event details</h3>
+        <p><strong>Date range:</strong> Jan 6 – 24, 2026<br>
+           <strong>Location:</strong> Virginia</p>
+      </div>
+
+      <div class="card widget-shell" id="register" aria-label="Event registration">
+        <iframe class="eb-widget" id="eb-widget-event-registration" name="eb-widget-event-registration" data-auto-adjust-height="true" data-auto-adjust-width="true" src="https://glueupna.glueup.com/organization/4582/widget/event-registration/?eventID=88723"></iframe>
+      </div>
+    </section>
+
+    <footer>© Your Organization • Questions? <a href="mailto:info@yoursite.org">info@yoursite.org</a></footer>
+  </div>
+</body>
+</html>
