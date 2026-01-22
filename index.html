@@ -42,11 +42,11 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0.5rem 2rem;
+            padding: 0.75rem 2rem;
         }
 
         .logo img {
-            height: 70px;
+            height: 60px;
             width: auto;
             display: block;
         }
@@ -55,7 +55,8 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            background: white;
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            padding-bottom: 2rem;
         }
 
         .hero-banner {
@@ -63,12 +64,14 @@
             max-width: 1200px;
             height: auto;
             display: block;
+            border-radius: 0 0 16px 16px;
         }
 
         .container {
             max-width: 1000px;
-            margin: 2rem auto 4rem;
-            padding: 0 1rem;
+            margin: -2rem auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
         }
 
         .card {
@@ -80,7 +83,7 @@
             border: 1px solid #f1f5f9;
         }
 
-        .info-section h2 {
+        .info-section h2, .card h2 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.75rem;
@@ -88,29 +91,36 @@
 
         .highlight { color: var(--secondary); font-weight: 600; }
 
-        .store-header {
-            text-align: center;
-            margin-bottom: 2rem;
+        /* Floorplan Specific Styling */
+        .floorplan-iframe {
+            position: relative;
+            width: 100%;
+            height: 720px; 
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
         }
-        
+
         .eb-widget {
             width: 100%;
             min-height: 900px; 
             border: 0;
             display: block;
-            margin: 0;
-            padding: 0;
-            outline: 0;
-            font-size: 100%;
-            vertical-align: baseline;
             background: transparent;
         }
 
         footer {
             text-align: center;
-            padding: 3rem;
+            padding: 4rem 2rem;
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 920px) {
+            .floorplan-iframe { height: 560px; }
+            .container { margin-top: 1rem; }
+            .card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -132,15 +142,24 @@
         <div class="card info-section">
             <h2>Order Your Monthly Brochures</h2>
             <p>As a valued member of the <span class="highlight">Louisiana Travel Association</span>, you can request unlimited brochures every month at no cost.</p>
-            <ul style="padding-left: 1.5rem; margin-top: 1.2rem; color: var(--text-muted);">
-                <li style="margin-bottom: 0.5rem;"><strong>Step 1:</strong> Log in to your LTA member account below.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Step 2:</strong> Select the brochures and quantities needed.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Step 3:</strong> Complete your order for direct shipping.</li>
-            </ul>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">Use the interactive floorplan below to locate specific tourism regions before placing your order.</p>
         </div>
 
+        <section class="card" id="floorplan" aria-label="Exhibit floorplan">
+            <h2>Exhibit Floorplan</h2>
+            <div class="floorplan-iframe">
+                <iframe
+                    title="FHEA 2026 Floorplan"
+                    src="https://homebase.map-dynamics.com/fhea2026/floorplan"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    style="display:block; width:100%; height:100%; border:0;">
+                </iframe>
+            </div>
+        </section>
+
         <div class="card">
-            <div class="store-header">
+            <div style="text-align: center; margin-bottom: 2rem;">
                 <h2>Member Registration Store</h2>
             </div>
 
@@ -149,7 +168,6 @@
                 id="eb-widget-event-registration" 
                 name="eb-widget-event-registration" 
                 data-auto-adjust-height="true" 
-                data-auto-adjust-width="true" 
                 src="https://glueupna.glueup.com/organization/4582/widget/event-registration/?lang=en&eventID=168286">
             </iframe>
         </div>
